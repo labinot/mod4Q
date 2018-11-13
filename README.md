@@ -4,89 +4,25 @@ Mod4Q is a Reasoner for expressive description ontologies. Currently it supports
 
 # Usage from CLI
 
-1. Download the latest version of clipper-vx.zip and unzip it
-
-3. Download [DLV](http://www.dlvsystem.com/dlvsystem/index.php/DLV) to your local machine
-
-3. Run `clipper.sh` 
-
-```
-Usage: clipper.sh [options] [command] [command options]
-  Options:
-    -v, -verbose   Level of verbosity
-                   Default: 1
-  Commands:
-    query      answerting conjunctive query
-      Usage: query [options] <ontology.owl> -sparql <cq.sparql>    
-        Options:
-          -f, --output-format   output format, possible values: { table | csv |
-                                atoms | html }
-                                Default: table
-          -dlv                  the location of dlv (e.g. /usr/local/bin/dlv)
-
-    rewrite      rewrite the query w.r.t. the ontology, and generate a datalog program
-      Usage: rewrite [options] <ontology.owl> [ -sparql <cq.sparql> ]       
-        Options:
-          --abox-only, -a             only rewrite ABox
-                                      Default: false
-          --ontology-and-query, -oq   rewrite ontology (= TBox + ABox) and query
-                                      Default: false
-          --ontology-only, -o         only rewrite ontology (= TBox + ABox)
-                                      Default: false
-          --remove-redundancy, -r     remove redundancy rules w.r.t the query
-                                      Default: false
-          --tbox-and-query, -tq       only rewrite TBox and query
-                                      Default: false
-          --tbox-only, -t             only rewrite TBox
-                                      Default: false
-          -output-datalog, -d         output datalog file 
-
-    help      Print the usage
-      Usage: help [options]
-```
+Currently working on making it usable from CLI
 
 # Build from source 
 We use [maven build system](http://maven.apache.org) and [Git](http://git-scm.com) to manage the source code.
 
-	  $ git clone https://github.com/ghxiao/clipper.git clipper
-	  $ cd clipper
+	  $ git clone https://github.com/labinot/mod4Q.git mod4Q
+	  $ cd mod4Q
 	  $ ./mvn_build.sh
 	  
-# Development in Eclipse
-
-Clipper is developed in Eclipse using [m2e](http://eclipse.org/m2e/)
-and [lombok](http://projectlombok.org/) plugins.
-
-1. Download the souce code via git.
-2. In eclipse, import the project by "File" -> "Import" -> "Maven" ->
-   "Existing Maven Projects" and point to Root directory of clipper
-
-
 # References
 
-[1] Thomas Eiter, Magdalena Ortiz, Mantas Šimkus, Trung-Kien Tran, and Guohui Xiao. 
-Query Rewriting for Horn-SHIQ plus Rules. In
-_Proceedings of the Twenty-Sixth AAAI Conference on Artificial
-Intelligence (AAAI 2012), July 22-26, 2012, Toronto, Ontario, Canada_.
-AAAI, AAAI Press, 2012.. [pdf](http://www.kr.tuwien.ac.at/staff/xiao/pub/2012/eostx2012-aaai-hshiq.pdf)
-
-[2] Thomas Eiter, Magdalena Ortiz, Mantas Šimkus, Trung-Kien Tran, and
-Guohui Xiao. Towards Practical Query Answering for Horn SHIQ. T.
-In Y. Kazakov, D. Lembo, and F.
-Wolter, editors, _Proceedings of the 2012 International Workshop on
-Description Logics, DL-2012, Rome, Italy_, June 7-10, 2012, volume 846
-of CEUR Workshop Proceedings. CEUR-WS.org, 2012. [pdf](http://www.kr.tuwien.ac.at/staff/xiao/pub/2012/eostx2012-dl-hshiq.pdf)
+[1] Labinot Bajraktari, Magdalena Ortiz, and Mantas Šimkus. 
+Combining Rules and Ontologies into Clopen Knowledge Bases. 
+In Proceedings of the Thirty-Second AAAI Conference on Artificial Intelligence, (AAAI-18), 
+the 30th innovative Applications of Artificial Intelligence (IAAI-18), and 
+the 8th AAAI Symposium on Educational Advances in Artificial Intelligence (EAAI-18), 
+New Orleans, Louisiana, USA, February 2-7, 2018. AAAI Press 2018
 
 
+Contact: bajraktari(a)kr.tuwien.ac.at
 
-
-## Links 
-
-* [Clipper @ Google Code](http://code.google.com/p/clipper-reasoner)
-* [Clipper @ Github](https://github.com/ghxiao/clipper)
-* [Clipper @ TUWien](http://www.kr.tuwien.ac.at/research/systems/clipper/index.html)
-
-Contact: xiao(a)kr.tuwien.ac.at
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ghxiao/clipper/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 # mod4Q
