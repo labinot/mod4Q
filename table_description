@@ -1,0 +1,150 @@
+debugging tables 
+(historical)
+============================
+answers
+answers_decoded
+hermitanswers
+
+last_current_ontology information tables
+=======================================
+ontology_metadata
+warnings
+log
+
+
+Staging tables
+========================
+st_axiom_with_conjunctions_in_lhs
+st_axiom_with_disjunctions_in_rhs
+st_axiom_with_exist_in_lhs
+st_axiom_with_exist_in_rhs
+st_axiom_with_simple_concepts
+st_axiom_with_simple_roles
+st_axiom_with_universal_in_rhs
+st_concept_assertions
+st_concept_assertions2
+st_concept_assertions_dedupe
+st_concepts
+st_individuals
+st_individuals_dedupe
+st_properties
+st_property_assertions
+st_property_assertions_dedupe
+st_query_atoms
+
+Core tables
+========================
+axiom_with_arr_conjunctions_in_lhs
+axiom_with_arr_disjunctions_in_rhs
+axiom_with_conjunctions_in_lhs
+axiom_with_disjunctions_in_rhs
+axiom_with_exist_in_lhs
+axiom_with_exist_in_rhs
+axiom_with_simple_concepts
+axiom_with_simple_roles
+axiom_with_universal_in_rhs
+
+concept_assertions
+concept_det_reachable
+concept_det_reachable_arr
+concept_nondet_reachable
+concept_reachable
+concept_reachable_arr
+concepts
+individuals
+properties
+property_assertions
+query_atoms
+roles_det_reachable
+roles_det_reachable_arr
+
+
+Statistics tables
+================================
+stat_abox_types_agg
+stat_abox_types_from_det
+stat_abox_types_from_det_plus
+stat_abox_types_from_dlitisation
+stat_abox_types_from_main
+stat_applicable_role
+stat_applicable_role_2
+stat_applicable_role_3
+stat_contradictory_eleminated_guesses
+stat_divisions_per_type
+stat_exec_time_instances_clasp
+stat_ind_per_profile
+stat_subprocess_runtime
+stat_types_from_guesses
+
+
+Intermediate tables 
+(tables that are used only on the scope of 
+runtime of one procedure those that are 
+truncated in the beginning and the end of 
+computation)
+====================================
+types_conj_lhs_consequences
+types_exist_lhs_consequences
+types_exist_lhs_det_consequences
+types_exist_rhs_consequences
+types_non_det_consequences
+types_univ_rhs_consequences
+new_knots
+new_types
+temp_merge_knots
+temp_merge_types
+temp_types_inc_arcs
+temp_types_out_arcs
+
+contradicting_guesses 
+-------------------------------------
+table that stores guesses that contradict 
+the type (per each type id), and is used 
+to update comp_types_from_guesses (remove 
+those guesses for that type_id)
+
+det_consequences_from_guesses 
+------------------------------------------
+table that stores the picked guess (the one 
+that causes the most deterministic consequences 
+among other guesses). Then according to 
+this two candidate types are created in 
+comp_types_from_guesses. The process is 
+iterativ until there are no more guesses 
+to pick.
+
+divisions_per_type
+------------------------------------------
+divides each type in comp_types_from_guesses
+based on contradictory guesses (i.e)
+these guesses will never be taken together
+
+
+Algorithm tables
+======================================
+table				cleaned before the load starts
+comp_types_from_guesses		-always
+extracted_profiles		-always 
+link_individuals_profiles	-always 
+link_old_new_profile_id		-always 
+types				-always 
+knots				-only when doing a load from scratch
+existing_types			-only when doing a load from scratch
+existing_profiles		-only when doing a load from scratch
+
+
+
+
+translation tables
+================================
+dl_fact_prof
+dl_fact_roles
+dl_rule_concepts
+dl_rule_constriants
+dl_rule_roles
+dl_rule_types
+
+reporting tables
+================================
+rp_computation_stats
+rp_dl_enconding_stats

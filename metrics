@@ -1,0 +1,31 @@
+Metrics:
+
+> load ontology to OWLApi
+> ontology normalization
+> load integrated ontology to DB, includes: 
+  clean Staging tables, 
+  clean computation tables,
+  insert to staging:
+    st_individuals 
+    st_concepts
+    st_Roles;
+    st_Concept_Assertions;
+    st_Property_Assertions;
+    st_TBox Axioms;
+  load core tables:
+    individuals 
+    concepts
+    Roles;
+    Concept_Assertions;
+    Property_Assertions;
+    TBox Axioms;
+    arrayTables
+    gatherAboxTbox Statistics
+
+> Initialize Types per each Indvidual(simply creates a type per each individual, which will later be used to extract profiles, runs the method initializeTypes)
+
+> Det Closure of Types of Individuals (closes the types of individuals deterministically before extracting profiles)
+
+> Extract Profiles
+
+Number of profiles
