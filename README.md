@@ -1,6 +1,6 @@
 # Introduction 
 
-Clipper is a Reasoner for conjunctive query answering over Horn-SHIQ ontology via query rewriting. 
+Mod4Q is a Reasoner for expressive description ontologies. Currently it supports Instance Query and a restricted version of Regular Path Query answering in ALCHI. 
 
 # Usage from CLI
 
